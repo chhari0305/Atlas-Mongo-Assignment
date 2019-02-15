@@ -1,0 +1,65 @@
+step0-  ;C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe  ---(2nd path)(install mongodb)
+
+step1-  Run this command in CMD to create new database- db databasename
+
+step2-  mongo "mongodb+srv://cluster0-0cndd.mongodb.net/test" --username chhari( copy this command from Atlas and paste in CMD)
+
+
+step3-  then create your table name by this command-  
+        query   -  db.createCollection("collection name") 
+        Example -  db.createCollection("Trasnporter")
+
+step5:- insert value in database--
+        query- db.colectionname.insert({"value"})
+
+        example- db.Transporter.insert({
+
+                Cl:"02",
+                Vendor:"Rigved",
+                Cty:"Navi Mumbai",
+                Name1:"Ashok",
+                Name2:"Akshat",
+                Name3:"Vaishnavi",
+                Name4:"Jayash",
+
+                City:"Pune",
+   
+                District:"Pune",
+
+                POBox:"400701",
+ 
+                POBoxpcd:"4000709",
+
+                PostalCode:"709",
+
+                Rg:"02",
+                SearchTerm:"03",
+                Street:"LBS Road",
+                Address:"Bhandup",
+                Title:"courier",
+                Date:"14/02/19",
+                Createdby:"Vaishnavi",
+                ISRNumber:"RV0474",
+                Group:"01",
+                Customer:"Reliance",
+                Telephone1:"022-27468282",
+                Telephone2:"022-27468383",
+                POBxcty:"Navi Mumbai",
+                Site:"Mumbai"})
+
+
+step4-   to update value in collection 
+         query-   db.Transporter.update({},{$unset:{SearchTerm:''}})
+
+         example- db.Transporter.update({'Address':'Bhandup'},{$set:{'Address':'Vaishi'}})
+
+
+step5-  database command to read data in good format--->
+        query-  db.database.find()
+        example-  db.Transporter.find() or db.Transporter.find().pretty()
+
+
+step6-  to delete data from database->
+        query-   db.collectionname.remove({_id:ObjectId("5c66528a129e3578b9617a79")})
+        example- db.Transporter.remove({_id:ObjectId("5c66528a129e3578b9617a79")})  //copy thid id from atlas database.
+
